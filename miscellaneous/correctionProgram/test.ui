@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>728</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="mainLeftColumnSpliter">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget">
+        <layout class="QVBoxLayout" name="buildingChoiceRows">
+         <item>
+          <layout class="QGridLayout" name="buildingChoiceGrid">
+           <item row="0" column="1">
+            <widget class="QLabel" name="chooseCampusLabel">
+             <property name="font">
+              <font>
+               <family>맑은 고딕</family>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>캠퍼스 선택</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="chooseCategoryLabel">
+             <property name="text">
+              <string>분류 선택</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QComboBox" name="chooseCategoryComboBox"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QComboBox" name="chooseCampusComboBox"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QComboBox" name="chooseDetailComboBox"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListView" name="showBuildingList"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="addBuildingButtonRow">
+           <item>
+            <widget class="QPushButton" name="addSelectedButton">
+             <property name="text">
+              <string>선택 항목 추가</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="addEntireButton">
+             <property name="text">
+              <string>전체 항목 추가</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="mainLeftColumnFirstSplitLine">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <layout class="QVBoxLayout" name="buildingForCorrectionRows">
+         <item>
+          <widget class="QLabel" name="buildingForCorrectionLabel">
+           <property name="text">
+            <string>보정 대상 건물</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListView" name="buildingForCorrectionList"/>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="buildingForCorrectionButtonRow">
+           <item>
+            <widget class="QPushButton" name="deleteSelectedButton">
+             <property name="text">
+              <string>선택 항목 삭제</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="deleteEntireButton">
+             <property name="text">
+              <string>전체 항목 삭제</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="Line" name="mainLeftColumnSecondSplitLine">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget_3">
+        <layout class="QGridLayout" name="optionGrid">
+         <item row="6" column="0">
+          <widget class="QLabel" name="replacementOptionLabel">
+           <property name="text">
+            <string>보정치 산정 옵션</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QGroupBox" name="quartileCalcGroupBox">
+           <property name="title">
+            <string>사분위수 계산 방법</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QRadioButton" name="noInterpolationRadioButton">
+              <property name="text">
+               <string>보간 안 함</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="yesInterpolationRadioButton">
+              <property name="text">
+               <string>보간 함</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QGroupBox" name="normalDistGroupBox">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="title">
+            <string>신뢰수준</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QRadioButton" name="reliability99RadioButton">
+              <property name="text">
+               <string>99%</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="reliability95RadioButton">
+              <property name="text">
+               <string>95%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QDateEdit" name="startDateEdit">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QPushButton" name="startCorrectionButton">
+           <property name="text">
+            <string>보정 시작</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="endDateLabel">
+           <property name="text">
+            <string>종료 일자</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="abnormalOptionLabel">
+           <property name="text">
+            <string>이상치 판단 방법</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QCheckBox" name="abnormal_IQR_checkbox">
+           <property name="text">
+            <string>IQR 방식</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QCheckBox" name="abnormal_ND_checkbox">
+           <property name="text">
+            <string>정규분포 방식</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="startDateLabel">
+           <property name="text">
+            <string>시작 일자</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDateEdit" name="endDateEdit">
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QComboBox" name="replacementOptionComboBox"/>
+         </item>
+         <item row="7" column="0">
+          <widget class="QPushButton" name="clearButton">
+           <property name="text">
+            <string>초기화</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget_4">
+       <layout class="QHBoxLayout" name="mainRightColumn">
+        <item>
+         <widget class="Line" name="mainSplitLine">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSplitter" name="mainRightColumnSplitter">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QWidget" name="verticalLayoutWidget_3">
+           <layout class="QVBoxLayout" name="mainRightUpperRow">
+            <item>
+             <widget class="QLabel" name="dataLabel">
+              <property name="text">
+               <string>데이터</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="dataTable"/>
+            </item>
+            <item>
+             <widget class="Line" name="mainRightColumnSplitLine">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QSplitter" name="mainRightLowerRowSplitter">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QWidget" name="horizontalLayoutWidget_3">
+            <layout class="QHBoxLayout" name="graphColumn">
+             <item>
+              <layout class="QVBoxLayout" name="graphContainer">
+               <item>
+                <widget class="QLabel" name="graphLabel">
+                 <property name="text">
+                  <string>그래프</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGraphicsView" name="graph"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="mainRightLowerRowSplitLine">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="saveOptionColumn">
+            <property name="title">
+             <string>저장 옵션</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="1" column="0">
+              <widget class="QPushButton" name="dataFileSaveButton">
+               <property name="text">
+                <string>파일로 데이터 저장</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="dataUploadButton">
+               <property name="text">
+                <string>보정치 서버에 업로드</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QPushButton" name="graphFileSaveButton">
+               <property name="text">
+                <string>파일로 그래프 저장</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
