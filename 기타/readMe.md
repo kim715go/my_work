@@ -6,4 +6,4 @@
 수상 후 수정 요청본 영상 : https://youtu.be/wo_XH95nBcU
 
 ## 원리금균등상환 남은 원금 계산식
-관련 블로그 주소 : https://freedomandtrust.tistory.com/80
+pdf파일에 내용이 있습니다.
