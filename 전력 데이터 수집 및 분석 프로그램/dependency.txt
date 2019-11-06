@@ -1,0 +1,31 @@
+python 3.7 is recommended for all four programs
+
+오토베이스 캡처 프로그램
+pyqt5
+pywinauto
+mss
+opencv-python < 4
+pandas
+xlrd
+
+전력데이터 수집계산기
+PyQt5
+pandas
+requests
+bs4
+openpyxl
+lxml
+
+온실가스 알리미 샘플
+PyQt5
+pandas
+matplotlib
+
+데이터 체크 프로그램
+PyQt5
+matplotlib
+pandas
+_dataChecker_userInterface (custom module)
+statsmodels
+numpy
+scipy
