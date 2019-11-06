@@ -729,25 +729,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             if self.retrieveConnected :
                 pass
             else :
-            #     ###TAG connect
-            #     tagNUserAddress = "http://147.46.160.12/AutoWeb/Service/ServiceDownLoadProject.asmx"
+                """실제 프로그램 구동부에는 값이 존재하지만 게시에 적절하지 않은 내용이 있어 모두 주석처리하고 내용은 삭제했습니다"""
+                # userLoginAddress = 
+                # userLoginHeader = 
+                # userLoginData = 
 
-            #     tagConnectHeader = {'Content-Type':'text/xml; charset=utf-8', 'SOAPAction': "http://tempuri.org/DownLoadWithData", 'Connection':'Keep-Alive',
-            #                         'Expect':'100-continue', 'Host':'147.46.160.12'}
-            #     tagConnectData = """<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><DownLoadWithData xmlns="http://tempuri.org/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><dir>TAG</dir><filename>Local.tagx</filename><compare_flag>true</compare_flag><file_time>2018-12-31T17:43:08+09:00</file_time><file_size>2289089</file_size><result>failed</result></DownLoadWithData></s:Body></s:Envelope>""".encode('utf-8')
-
-            #     userFileHeader = {'Content-Type':'text/xml; charset=utf-8', 'SOAPAction': "http://tempuri.org/DownLoadWithData",
-            #                         'Expect':'100-continue', 'Host':'147.46.160.12'}
-            #     userFileData = """<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><DownLoadWithData xmlns="http://tempuri.org/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><dir>Users</dir><filename>snu1.user</filename><compare_flag>true</compare_flag><file_time>2018-12-21T15:53:30+09:00</file_time><file_size>804</file_size><result>failed</result></DownLoadWithData></s:Body></s:Envelope>"""
-
-                userLoginAddress = "http://147.46.160.12/AutoWeb/Service/ServiceUserProtect.asmx"
-                userLoginHeader = {'Content-Type':'text/xml; charset=utf-8', 'SOAPAction': "http://tempuri.org/CheckUserName",
-                                    'Expect':'100-continue', 'Host':'147.46.160.12'}
-                userLoginData = """<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><CheckUserName xmlns="http://tempuri.org/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><username>snu1</username><password>262346</password></CheckUserName></s:Body></s:Envelope>"""
-
-            #     self.makeConnection(tagNUserAddress, tagConnectData, tagConnectHeader, self.sessionList)
-            #     self.makeConnection(tagNUserAddress, userFileData, userFileHeader, self.sessionList)
-                self.makeConnection(userLoginAddress, userLoginData, userLoginHeader, self.sessionList, 'CheckUserNameResult', 'true')
+                # self.makeConnection(userLoginAddress, userLoginData, userLoginHeader, self.sessionList, 'CheckUserNameResult', 'true')
 
                 self.retrieveConnected = True
 
