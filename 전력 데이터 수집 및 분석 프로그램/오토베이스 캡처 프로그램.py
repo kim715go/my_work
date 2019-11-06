@@ -1,7 +1,7 @@
-
 #ver 1.6.1 (2019/3/18)
 #두 번 이상 클릭해야 열 수 있는 배전도 반영
 
+# importing modules
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from pywinauto import application
@@ -30,6 +30,8 @@ from pandas import read_excel
 import sys
 
 
+# 이 클래스는 연/월 문자열을 조금 더 편리하게 사용하기 위해 만든 것입니다.
+# 캡처한 화면을 저장할 때 파일 이름 등에 활용됩니다.
 class YearMonth():
     def __init__(self, year, month):
         if year > 0 and month > 0 and month < 13 : 
