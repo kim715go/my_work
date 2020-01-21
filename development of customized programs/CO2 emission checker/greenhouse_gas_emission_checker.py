@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'mainpage.ui'
-#
-# Created by: PyQt5 UI code generator 5.12
-#
-# WARNING! All changes made in this file will be lost!
+# 1.0.1. (2020/1/21) 건물 정보 파일 읽을 때 자료형식을 문자열로 지정
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pandas as pd
@@ -396,7 +390,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.statusText = "온실가스 배출 데이터 조회"
 
         self.mainData = pd.read_excel('rawData.xlsx', index_col=0, date_parser=True)/1000
-        self.bldInfo = pd.read_excel("bldNames.xlsx", index_col=0)
+        self.bldInfo = pd.read_excel("bldNames.xlsx", index_col=0, dtype=str)
 
 
         self.statusbar.showMessage(self.statusText)
@@ -571,7 +565,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         bldFiltered = self.bldInfo[self.deptFilter]
 
-        bldwiseTable.index = ([x + "동\n" for x in bldFiltered.index] + bldFiltered['건물명']).tolist()
+        bldwiseTable.index = ([str(x) + "동\n" for x in bldFiltered.index] + bldFiltered['건물명']).tolist()
 
         bldwiseTable.plot.barh(ax = self.buildingwiseGraph, rot=0, stacked = True, color=['c', 'orange', 'red', 'green'])
         self.buildingwiseGraph.set_title("건물별 온실가스 배출 현황 및 예상")
